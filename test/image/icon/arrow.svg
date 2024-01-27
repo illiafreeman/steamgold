@@ -1,0 +1,6 @@
+<svg id="arrow" viewBox="0 0 14 9" xmlns="http://www.w3.org/2000/svg">
+  <g fill="none" fill-rule="evenodd">
+    <path d="M0 0h14v9H0z"/>
+    <path stroke="#eb9900" stroke-width="2" d="M13 1 7 7 1 1"/>
+  </g>
+</svg>
