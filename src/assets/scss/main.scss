@@ -1250,7 +1250,7 @@ footer {
 			width: 18px;
 			height: 12px;
 			stroke: #eb9900 !important;
-			transition: all .3s ease-out;
+			//transition: all .3s ease-out;
 			opacity: 0;
 		}
 
@@ -1259,6 +1259,11 @@ footer {
 		svg{
 			opacity: 1;
 		}
+	}
+}
+@media screen and (max-width: $desktopWidth) {
+	.form__text{
+		align-items: flex-start;
 	}
 }
 

@@ -1154,13 +1154,17 @@ footer .container .footer-copyright img {
   width: 18px;
   height: 12px;
   stroke: #eb9900 !important;
-  transition: all 0.3s ease-out;
   opacity: 0;
 }
 .checkbox:checked + .checkbox-label svg {
   opacity: 1;
 }
 
+@media screen and (max-width: 1248px) {
+  .form__text {
+    align-items: flex-start;
+  }
+}
 /* Module styles */
 .menu {
   position: absolute;
