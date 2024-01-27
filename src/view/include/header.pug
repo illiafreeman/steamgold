@@ -1,0 +1,25 @@
+header
+  .container
+    .header.content
+      .header-logo
+        a(href='/' title='Steamgold')
+          picture
+            source(srcset='/image/logo.svg' media='(min-width: 768px)' type='image/svg+xml')
+            img(src='/image/logo.m.svg' alt='Steamgold')
+      nav.header-menu
+        ul
+          li
+            a(href='/#faq' title='FAQ') FAQ
+          li
+            a(href='//vk.com/steamgold' target='_blank' title='Отзывы')
+              svg.vk
+                use(href='/image/icon/vk.svg#vk')
+              | Отзывы
+          li
+            a(href='tg://resolve?domain=Steamgold' target='_blank' title='Есть вопросы?')
+              svg.telegram
+                use(href='/image/icon/telegram.svg#telegram')
+              | Есть вопросы?
+      .header-menu-bar
+        a(href='#' data-action='open-menu' title='Открыть меню')
+          img(src='/image/icon/menu.svg' alt='icon')

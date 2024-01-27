@@ -1,0 +1,6 @@
+<svg id="menu" viewBox="0 0 24 20" xmlns="http://www.w3.org/2000/svg">
+  <g fill="none" fill-rule="evenodd">
+    <path d="M0 0h24v20H0z"/>
+    <path d="M0 5h24v2H0zm0 8h24v2H0v-2z" fill="#eb9900"/>
+  </g>
+</svg>

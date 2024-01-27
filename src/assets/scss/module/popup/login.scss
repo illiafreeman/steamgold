@@ -1,0 +1,19 @@
+
+.login {
+  &__main { opacity: 0; transform: translateY(16px); transition: opacity 1.2s ease-in-out, transform 1.2s ease-in-out; }
+  &__title { margin-bottom: 1.3125rem; }
+  &__button { margin-top: 1.875rem; }
+  &__image { margin-top: 2.25rem;
+    img { width: 216px; height: 69px; }
+  }
+}
+
+@media screen and (min-width: $tabletWidth) {
+  .login {
+    &__title { margin-bottom: 1.5625rem; }
+    &__button { margin-top: 2rem; }
+    &__image { margin-top: 2.875rem;
+      img { width: 460px; height: 146px; }
+    }
+  }
+}

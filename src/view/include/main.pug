@@ -1,0 +1,28 @@
+block variables
+
+doctype html
+html(lang='ru')
+  head
+    meta(charset='utf-8')
+    meta(http-equiv='X-UA-Compatible' content='ie=edge')
+    title #{ title }
+
+    // meta
+    meta(name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no')
+    meta(name='description' content=description)
+    meta(name='theme-color' content='#b0b5c1')
+
+    // icon & css
+    link(href='/favicon.ico' rel='shortcut icon' type='image/x-icon')
+  body
+    #app
+      include header
+      include menu
+      main
+        block content
+      if (page != 'error')
+        include footer
+    if (page != 'error')
+      include popup
+
+    // js

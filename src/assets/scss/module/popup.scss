@@ -1,0 +1,60 @@
+
+@import 'popup/login';
+@import 'popup/email';
+@import 'popup/accepted';
+
+
+.popup { position: fixed; left: 0; top: 0; right: 0; bottom: 0; width: 100vw; height: 100vh; overflow: hidden; opacity: 0; visibility: hidden; @include z('popup');
+
+  /* Однопальцевый скролл для iPad */
+  -webkit-overflow-scrolling: touch;
+
+  /* Фикс для странностей в iPad */
+  > * { -webkit-transform: translateZ(0px); transform: translateZ(0px); }
+
+  &-overlay { position: absolute; left: 0; top: 0; right: 0; bottom: 0; width: 100%; height: 100%; min-height: 100vh; background: $overlayBackground; overflow-x: hidden; }
+
+  &__module { position: absolute; left: 24px; top: 0; right: 0; bottom: 0; width: calc(100% - 24px); height: 100%; padding: 6rem 2.5rem; background: $DarkGrey; overflow: auto; display: flex; flex-direction: column; opacity: 0; visibility: hidden; transform: translateX(100%); transition: opacity .6s ease-in-out, transform .6s ease-in-out; @include z('popup-module');
+    &--open { opacity: 1; visibility: visible;
+      .login__main,
+      .email__main,
+      .accepted__main { opacity: 1; transform: translateY(0px); }
+    }
+  }
+  &__close { position: absolute; top: 36px; right: 24px; display: flex; @include z('close');
+    svg { width: 24px; height: 20px; stroke: $linkColor; flex: none; }
+  }
+
+  &--open { opacity: 1; visibility: visible;
+    .popup__module { transform: translateX(0px);
+      .login__main,
+      .email__main,
+      .accepted__main { opacity: 1; transform: translateY(0px); }
+    }
+  }
+}
+
+@media screen and (min-width: $tabletWidth) {
+  .popup {
+    &__module { left: 50%; top: 50px; right: auto; bottom: auto; width: 600px; padding: 5rem 4.375rem 4.75rem;
+      &--center { left: 50%; top: 50%; right: auto; bottom: auto; width: 480px; height: auto; border-radius: 8px; transform: translate(-50%, -50%);
+
+        /* Добавляет сглаживание */
+        // -webkit-image-rendering: pixelated; -moz-image-rendering: pixelated; image-rendering: pixelated;
+      }
+      &--right { left: auto; top: 0; right: 0; bottom: 0; justify-content: center; transform: translate(100%, 0); }
+    }
+    &__close { top: 29px; right: 27px; }
+
+    &--open {
+      .popup__module {
+        &--center { transform: translate(-50%, -50%); }
+      }
+    }
+  }
+}
+@media screen and (min-width: $desktopWidth) {
+  .popup {
+    &__close:hover svg { stroke: $linkColor_hover; }
+  }
+}

@@ -1,0 +1,58 @@
+
+.menu { position: absolute; left: 0; top: 0; right: 0; bottom: 0; width: 100vw; height: 100vh; background: $overlayBackground; overflow: hidden; opacity: 0; visibility: hidden; @include z('menu');
+
+  /* Однопальцевый скролл для iPad */
+  -webkit-overflow-scrolling: touch;
+
+  /* Фикс для странностей в iPad */
+  > * { -webkit-transform: translateZ(0px); transform: translateZ(0px); }
+
+  &__close { position: absolute; top: 36px; right: 24px; display: flex; @include z('close');
+    svg { width: 24px; height: 20px; stroke: $linkColor; flex: none; }
+  }
+
+  .main { height: 100%; margin-left: 24px; padding: 6rem 2.5rem; background: $DarkGrey; overflow-x: hidden; display: flex; flex-direction: column; transform: translateX(100%); transition: opacity .6s ease-in-out, transform .6s ease-in-out;
+    &-menu { margin-bottom: 2.25rem; display: flex; opacity: 0; transform: translateY(16px); transition: opacity 1.2s ease-in-out, transform 1.2s ease-in-out;
+      ul { width: 100%; display: flex; flex-direction: column;
+        li {
+          &:not(:last-child) { margin-bottom: 2rem; }
+
+          a { color: $LightGrey; font-weight: 600; font-size: 15px; line-height: 20px; letter-spacing: 1px; text-transform: uppercase; display: flex; align-items: center;
+            svg { margin-right: 10px; fill: $LightGrey; flex: none;
+              &.vk { width: 20px; height: 11px; }
+              &.telegram { width: 16px; height: 14px; }
+            }
+          }
+        }
+      }
+    }
+    // &-social { display: flex; opacity: 0; transform: translateY(16px); transition: opacity 1.2s ease-in-out, transform 1.2s ease-in-out;
+    //   &__link {
+    //     &:not(:last-child) { margin-right: 2.5rem; }
+
+    //     a { display: flex;
+    //       svg { fill: $LightGrey; flex: none;
+    //         &.vk { width: 20px; height: 11px; }
+    //       }
+    //     }
+    //   }
+    // }
+
+    &__image { position: absolute; right: 0; bottom: 0; flex: none; opacity: 0; transition: opacity 2.4s ease-in-out;
+      img { width: 296px; height: 294px; }
+    }
+  }
+
+  &--open { opacity: 1; visibility: visible;
+    .main { transform: translateX(0px);
+      &-menu,
+      &-social { opacity: 1; transform: translateY(0px); }
+
+      &__image { opacity: 1; }
+    }
+  }
+}
+
+@media screen and (min-width: $tabletWidth) {
+  .menu { display: none !important; }
+}

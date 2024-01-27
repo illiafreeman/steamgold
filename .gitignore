@@ -1,0 +1,13 @@
+# default
+.vscode/
+node_modules/
+
+# special
+.DS_Store*
+
+# db, logs
+*.log
+*.sql
+
+# dev
+*.conf

@@ -1,0 +1,30 @@
+
+/* About page */
+#about {
+  .container { padding-top: 3rem; padding-bottom: 3rem;
+    .about {
+      &__title { margin-bottom: 2rem; }
+      &__text {
+        &:not(:last-child) { margin-bottom: 2rem; }
+
+        p:not(:last-child) { margin-bottom: 1rem; }
+      }
+    }
+
+    @media screen and (min-width: $tabletWidth) {
+      .about {
+        &__title { margin-bottom: 2.5rem; }
+        &__text {
+          &:not(:last-child) { margin-bottom: 2.5rem; }
+
+          p:not(:last-child) { margin-bottom: 1.5rem; }
+        }
+      }
+    }
+    @media screen and (min-width: $desktopWidth) {
+      .about {
+        &__text p a:hover { text-decoration: underline; }
+      }
+    }
+  }
+}

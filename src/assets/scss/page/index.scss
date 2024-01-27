@@ -1,0 +1,206 @@
+
+/* Index page */
+#index { @include z('index');
+  .container { padding-top: 3rem;
+    .index { display: flex; flex-direction: column;
+      &__title { margin-bottom: 2rem; }
+
+      &-calculation { height: 0; border-top: 1px solid $DarkGrey; margin: 0 -1.5rem; padding: 0 1.5rem; display: flex; flex-direction: column; opacity: 0; visibility: hidden; transition: opacity .6s ease-in-out; @include z('calculation');
+        &--open { height: auto; margin-top: 2.5rem; padding-top: 2.375rem; opacity: 1; visibility: visible; }
+
+        &__item { display: flex; justify-content: space-between; align-items: flex-start;
+          &:not(:last-child) { margin-bottom: 1.5rem; }
+          &:nth-child(2) { border-bottom: 1px solid $DarkGrey; padding-bottom: 1.5rem; }
+        }
+        &__title { position: relative; width: 64%; font-size: 15px; line-height: 22px; margin-right: 1.25rem; display: inline-block; }
+        &__tooltip { margin-left: .5rem; display: inline-flex; vertical-align: middle;
+          &[area-expanded=true] span { display: block; }
+
+          svg { width: 19px; height: 19px; fill: $LightGrey; stroke: $LightGrey; flex: none; }
+          span { position: absolute; left: 0; top: 40px; width: 274px; border-radius: 2px; padding: .75rem 1rem; background: $Black; color: $White; font-size: 12px; line-height: 15px; display: none; @include z('tooltip'); }
+        }
+        &__value { color: $MiddleGrey; font-size: 18px; line-height: 21px; display: flex; align-items: center;
+          span { line-height: 24px; white-space: nowrap;
+            &.indent { margin-right: .3125rem; color: $White; }
+            &.normal { font-weight: normal; }
+            &.service { display: none;
+              &.open { margin-left: .5rem; font-weight: 600; display: inline-block; }
+
+              span:nth-child(2) { margin-left: .3125rem; }
+            }
+            &.sum { font-weight: 600; }
+            &.promo { margin-right: .625rem; color: $MiddleGrey; font-weight: 600; }
+            span.yellow { color: $Yellow; }
+          }
+        }
+      }
+
+      &__video { display: none; }
+    }
+
+    @media screen and (max-width: $mobileWidth) {
+      .index {
+        &-calculation {
+          &__title { width: 44%; }
+          &__tooltip span { top: 64px; }
+        }
+      }
+    }
+    @media screen and (min-width: $tabletWidth) {
+      .index { flex-direction: row; justify-content: space-between;
+        &__main { width: calc((100% - 1.5rem) / 2); margin-right: 1.5rem; }
+        &__group { position: relative; }
+
+        &-calculation { position: absolute; top: 0; right: -306px; width: 282px; height: auto; border: none; border-radius: 8px; margin: 0; padding: 2rem 2.5rem 2.1875rem; background: $blockBackground;
+          &--open { margin: 0; }
+
+          &__item { flex-direction: column; justify-content: baseline;
+            &:nth-child(2) { margin: 0 -2.5rem 1.5rem; padding: 0 2.5rem 1.5rem; }
+          }
+          &__title { width: auto; margin: 0 0 .5rem; display: flex; align-items: center; }
+          &__tooltip { display: flex; vertical-align: auto; }
+          &__value span {
+            &.sum { order: 1; }
+            &.promo { order: 2; margin: 0 0 0 .5rem; }
+          }
+        }
+
+        &__video { width: calc((100% - 1.5rem) / 2); display: flex; align-items: flex-start; z-index: -1;
+          video { width: 100%; flex: none; }
+        }
+      }
+    }
+    @media screen and (min-width: $laptopWidth) {
+      // &::before { @include pseudo; top: -648px; right: -462px; width: 1020px; height: 1020px; border: 2px solid $DarkGrey; border-radius: 50%; z-index: -1; }
+
+      .index {
+        &-calculation {
+          &__tooltip { position: relative;
+            &--small span { width: 220px; }
+
+            span { left: 35px; top: -16px; }
+          }
+        }
+      }
+    }
+    @media screen and (min-width: $desktopWidth) { padding-top: 2rem;
+      &::before { top: -704px; right: -452px; width: 1184px; height: 1184px; }
+
+      .index {
+        &__main { margin-top: -1rem; }
+        &__title { margin-bottom: 2.5rem; }
+        &__form { border-radius: 8px; padding: 40px; background: $blockBackground1; }
+
+        &-calculation {
+          &__tooltip { position: relative;
+            &:hover {
+              svg { fill: $White; stroke: $White; }
+              span { display: block; }
+            }
+          }
+        }
+
+        &__video { position: sticky; top: 32px; width: 642px; margin: -10px -64px 0 0; align-self: flex-start;
+          video { width: 642px; height: 625.2px; }
+        }
+      }
+    }
+  }
+}
+
+#steps { @include z('steps');
+  .container {
+    .steps {
+      &__title { margin-bottom: 2rem; }
+
+      &-list { display: flex; flex-wrap: wrap;
+        &__item { width: calc((100% - 1rem) / 2); border-radius: 8px; padding: 1.4375rem 1.5rem 1.5625rem; background: $blockBackground; display: flex; flex-direction: column-reverse; justify-content: space-between; flex-grow: 1;
+          &:nth-child(odd) { margin-right: 1rem; }
+          &:nth-child(n+3) { margin-top: 1rem; }
+        }
+        &__count { margin-top: 1.75rem; color: $Yellow; font-weight: 600; font-size: 18px; line-height: 24px; text-align: right; }
+      }
+    }
+
+    @media screen and (min-width: $tabletWidth) {
+      .steps {
+        &-list { flex-wrap: nowrap;
+          &__item { width: calc((100% - 4.5rem) / 4);
+            &:nth-child(odd) { margin-right: 0; }
+            &:nth-child(n+3) { margin-top: 0; }
+            &:not(:last-child) { margin-right: 1.5rem; }
+          }
+        }
+      }
+    }
+    @media screen and (min-width: $laptopWidth) {
+      // &::before { @include pseudo; left: -380px; bottom: -38px; width: 584px; height: 584px; border: 2px solid $DarkGrey; border-radius: 50%; z-index: -1; }
+    }
+    @media screen and (min-width: $desktopWidth) { padding-bottom: 4.375rem;
+      &::before { left: -396px; bottom: -22px; width: 748px; height: 748px; }
+
+      .steps {
+        &__title { margin-bottom: 2.5rem; }
+
+        &-list {
+          &__item { padding: 2.75rem 2.5rem; flex-direction: column; justify-content: flex-start; }
+          &__count { margin: 0 0 4.5rem; font-size: 24px; line-height: 32px; text-align: left; }
+        }
+      }
+    }
+    @media screen and (min-width: $desktopWidth_md) { padding-bottom: 4.375rem; }
+  }
+}
+
+#faq {
+  .container { padding-bottom: 3.75rem;
+    .faq {
+      &__title { margin-bottom: 2rem; }
+
+      &-list {
+        &__item:not(:last-child) { margin-bottom: 2rem; }
+        &__question { display: flex; cursor: pointer;
+          &[area-expanded=true] {
+            & + .faq-list__answer { display: block; }
+
+            .faq-list__icon svg { stroke: $LightGrey; transform: rotate(180deg); }
+          }
+        }
+        &__icon { margin-right: 1rem; display: flex;
+          svg { width: 24px; height: 24px; stroke: $linkColor; flex: none; }
+        }
+        &__answer { margin-top: 1.5rem; display: none; }
+        &__text {
+          p:not(:first-child) { margin-top: 1.5rem; }
+          ul { margin: 1.5rem 0 0 1rem;
+            li { position: relative;
+              &::before { @include pseudo; left: -16px; top: 8.5px; width: 5px; height: 5px; border-radius: 50%; background: $mainColor; }
+            }
+          }
+        }
+      }
+    }
+
+    @media screen and (min-width: $tabletWidth) {
+      // .faq {}
+    }
+    @media screen and (min-width: $desktopWidth) { padding-bottom: 2rem;
+      .faq {
+        &__title { margin-bottom: 2.5rem; }
+
+        &-list {
+          &__item { border: 2px solid $DarkGrey; border-radius: 8px;
+            &:not(:last-child) { margin-bottom: 1.5rem; }
+            &:hover { border-color: $optionsBackground;
+              .faq-list__answer { border-color: $optionsBackground; }
+            }
+          }
+          &__question { padding: 1.875rem 2.5rem; align-items: center;
+            // &[area-expanded=false]:hover .faq-list__icon svg { stroke: $linkColor_hover; }
+          }
+          &__answer { border-top: 2px solid $DarkGrey; margin-top: 0; padding: 1.875rem 2.5rem 2.1875rem; }
+        }
+      }
+    }
+  }
+}

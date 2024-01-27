@@ -1,0 +1,32 @@
+// Menu
+.menu
+  .main
+    a.menu__close(href='#' data-action='close-menu' title='Закрыть меню')
+      svg
+        use(href='/image/icon/close.svg#close')
+    nav.main-menu
+      ul
+        li
+          a(href='/#faq' title='FAQ') FAQ
+        li
+          a(href='//vk.com/steamgold' target='_blank' title='Отзывы')
+            svg.vk
+              use(href='/image/icon/vk.svg#vk')
+            | Отзывы
+        li
+          a(href='tg://resolve?domain=Steamgold' target='_blank' title='Есть вопросы?')
+            svg.telegram
+              use(href='/image/icon/telegram.svg#telegram')
+            | Есть вопросы?
+    //- ul.main-social
+    //-   li.main-social__link
+    //-     a(href='tg://resolve?domain=Steamgold' target='_blank' title='Телеграм')
+    //-       svg.telegram
+    //-         use(href='/image/icon/telegram.svg#telegram')
+    //-   li.main-social__link
+    //-     a(href='//vk.com/steamgold' target='_blank' title='ВКонтакте')
+    //-       svg.vk
+    //-         use(href='/image/icon/vk.svg#vk')
+    .main__image
+      img(src='/image/illustration/menu.png' srcset='/image/illustration/menu@2x.png 2x, /image/illustration/menu@3x.png 3x' loading='lazy' alt='illustration')
+// Menu end

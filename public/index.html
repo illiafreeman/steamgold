@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Steamgold</title>
+    <!-- meta-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="theme-color" content="#b0b5c1">
+    <!-- icon & css-->
+    <link href="/favicon.ico" rel="shortcut icon" type="image/x-icon">
+  <link href="/assets/css/main.css?v=4f46c2f" rel="stylesheet"></head>
+  <body>
+    <div id="app">
+<header>
+  <div class="container">
+    <div class="header content">
+      <div class="header-logo"><a href="/" title="Steamgold">
+          <picture>
+            <source srcset="/image/logo.svg" media="(min-width: 768px)" type="image/svg+xml"><img src="/image/logo.m.svg" alt="Steamgold">
+          </picture></a></div>
+      <nav class="header-menu">
+        <ul>
+          <li><a href="/#faq" title="FAQ">FAQ</a></li>
+          <li><a href="//vk.com/steamgold" target="_blank" title="Отзывы">
+              <svg class="vk">
+                <use href="/image/icon/vk.svg#vk"></use>
+              </svg>Отзывы</a></li>
+          <li><a href="tg://resolve?domain=Steamgold" target="_blank" title="Есть вопросы?">
+              <svg class="telegram">
+                <use href="/image/icon/telegram.svg#telegram"></use>
+              </svg>Есть вопросы?</a></li>
+        </ul>
+      </nav>
+      <div class="header-menu-bar"><a href="#" data-action="open-menu" title="Открыть меню"><img src="/image/icon/menu.svg" alt="icon"></a></div>
+    </div>
+  </div>
+</header>
+<!-- Menu-->
+<div class="menu">
+  <div class="main"><a class="menu__close" href="#" data-action="close-menu" title="Закрыть меню">
+      <svg>
+        <use href="/image/icon/close.svg#close"></use>
+      </svg></a>
+    <nav class="main-menu">
+      <ul>
+        <li><a href="/#faq" title="FAQ">FAQ</a></li>
+        <li><a href="//vk.com/steamgold" target="_blank" title="Отзывы">
+            <svg class="vk">
+              <use href="/image/icon/vk.svg#vk"></use>
+            </svg>Отзывы</a></li>
+        <li><a href="tg://resolve?domain=Steamgold" target="_blank" title="Есть вопросы?">
+            <svg class="telegram">
+              <use href="/image/icon/telegram.svg#telegram"></use>
+            </svg>Есть вопросы?</a></li>
+      </ul>
+    </nav>
+    <div class="main__image"><img src="/image/illustration/menu.png" srcset="/image/illustration/menu@2x.png 2x, /image/illustration/menu@3x.png 3x" loading="lazy" alt="illustration"></div>
+  </div>
+</div>
+<!-- Menu end-->
+      <main>
+        <section id="index">
+          <div class="container">
+            <div class="index content object-wrapper">
+              <div class="index__main">
+                <div class="index__title">
+                  <h1>Пополнить баланс Steam</h1>
+                </div>
+                <div class="index__group">
+                  <form class="form index__form" name="balance" action="/" autocomplete="off" accept-charset="utf-8">
+                    <fieldset class="form__line">
+                      <div class="form__group">
+                        <div class="form__icon"><img src="/image/icon/user.svg" alt="icon"></div>
+                        <input class="form__input" type="text" name="login" required placeholder="Ваш логин" value="" title="Введите ваш логин"><a class="form__link" href="#" data-action="open-popup" data-popup="login" title="Где взять логин?">
+                          <svg>
+                            <use href="/image/icon/info.svg#info"></use>
+                          </svg><span>Где взять логин?</span></a>
+                        <div class="form__error">Введите логин для пополнения</div>
+                      </div>
+                    </fieldset>
+                    <fieldset class="form__line">
+                      <div class="form__group">
+                        <div class="form__icon"><img src="/image/icon/wallet.svg" alt="icon"></div>
+                        <input class="form__input" type="number" name="amount" required placeholder="500" value="" title="Введите сумму"><span class="symbol">&#8381;</span>
+                        <div class="form__error">Введите сумму</div>
+                        <div class="form__error-2">Минимальная сумма пополнения - 200₽</div>
+                      </div>
+                    </fieldset>
+                    <fieldset class="form__line">
+                      <div class="form__group">
+                        <div class="form__icon"><img src="/image/icon/email.svg" alt="icon"></div>
+                        <input class="form__input" type="email" name="email" required placeholder="Ваш email" value="" title="Введите ваш email"><a class="form__link form__link--email" href="#" data-action="open-popup" data-popup="email" title="Зачем нужен email?">
+                          <svg>
+                            <use href="/image/icon/info.svg#info"></use>
+                          </svg></a>
+                        <div class="form__tooltip" area-expanded="false">
+                          <svg>
+                            <use href="/image/icon/question-2.svg#question"></use>
+                          </svg><span>Адрес электронной почты требуется для отправки банком-эквайером чека о совершении операции в соответствие с законом № 54-ФЗ.</span>
+                        </div>
+                        <div class="form__error">Укажите ваш email</div>
+                      </div>
+                    </fieldset>
+                    <fieldset class="form__line">
+                      <div class="form__group">
+                        <div class="form__icon"><img src="/image/icon/promo.svg" alt="icon"></div>
+                        <input class="form__input" type="text" name="promo" placeholder="Есть промокод?" value="" title="Введите промокод">
+                        <div class="form__action form__action--check"><a href="#" data-action="check-promo" title="Подтверлить">
+                            <svg>
+                              <use href="/image/icon/check-input.svg#check"></use>
+                            </svg></a></div>
+                        <div class="form__action form__action--close"><a href="#" data-action="close-promo" title="Сбросить">
+                            <svg>
+                              <use href="/image/icon/close-input.svg#close"></use>
+                            </svg></a></div>
+                        <div class="form__error-2">Введен недействительный промокод</div>
+                      </div>
+                    </fieldset>
+                    <fieldset class="form__line">
+                      <div class="form__group">
+                        <label class="form__label">Способ оплаты</label>
+                        <div class="select form__select">
+                          <input type="hidden" name="payment" required value="visa"><a class="select-link" href="#" data-action="toggle-options" title="Выберите способ оплаты">
+                            <input class="form__input" type="text" readonly placeholder="" value="">
+                            <div class="select-image">
+                              <svg class="visa">
+                                <use href="/image/icon/visa.m.svg#visa"></use>
+                              </svg>
+                            </div>
+                            <div class="select-arrow">
+                              <svg>
+                                <use href="/image/icon/arrow.svg#arrow"></use>
+                              </svg>
+                            </div></a>
+                          <ul class="select-options">
+                            <li class="select-options__item"><a class="select-options__link active" href="#" data-action="select-option" data-value="visa-mir" title="Оплатить с помощью карт Visa или Мир">
+                                <div class="select-options__icon">
+                                  <svg class="visa-mir">
+                                    <use href="/image/icon/visa-mir.m.svg#visa-mir"></use>
+                                  </svg>
+                                </div>
+                                <div class="select-options__check">
+                                  <svg>
+                                    <use href="/image/icon/check.svg#check"></use>
+                                  </svg>
+                                </div></a></li>
+                            <li class="select-options__item"><a class="select-options__link" href="#" data-action="select-option" data-value="sbp" title="Оплатить с помощью СБП">
+                                <div class="select-options__icon">
+                                  <svg class="sbp">
+                                    <use href="/image/icon/sbp.svg#sbp"></use>
+                                  </svg>
+                                </div>
+                                <div class="select-options__check">
+                                  <svg>
+                                    <use href="/image/icon/check.svg#check"></use>
+                                  </svg>
+                                </div></a></li>
+                            <li class="select-options__item"><a class="select-options__link" href="#" data-action="select-option" data-value="tinkoff-pay" title="Оплатить с помощью Tinkoff Pay">
+                                <div class="select-options__icon">
+                                  <svg class="tinkoff">
+                                    <use href="/image/icon/tinkoff-pay.svg#tinkoff-pay"></use>
+                                  </svg>
+                                </div>
+                                <div class="select-options__check">
+                                  <svg>
+                                    <use href="/image/icon/check.svg#check"></use>
+                                  </svg>
+                                </div></a></li>
+                            <li class="select-options__item"><a class="select-options__link" href="#" data-action="select-option" data-value="yandex-pay" title="Оплатить с помощью Yandex Pay">
+                                <div class="select-options__icon">
+                                  <svg class="yandex">
+                                    <use href="/image/icon/yandex-pay.svg#yandex-pay"></use>
+                                  </svg>
+                                </div>
+                                <div class="select-options__check">
+                                  <svg>
+                                    <use href="/image/icon/check.svg#check"></use>
+                                  </svg>
+                                </div></a></li>
+                          </ul>
+                          <ul class="select-tabs">
+                            <li class="select-tabs__item select-tabs__item--active"><a class="select-tabs__link" href="#" data-action="select-tab" data-value="visa-mir" title="Оплатить с помощью карт Visa или Мир">
+                                <div class="select-tabs__icon">
+                                  <svg class="visa-mir">
+                                    <use href="/image/icon/visa-mir.svg#visa-mir"></use>
+                                  </svg>
+                                </div></a></li>
+                            <li class="select-tabs__item"><a class="select-tabs__link" href="#" data-action="select-tab" data-value="sbp" title="Оплатить с помощью СБП">
+                                <div class="select-tabs__icon">
+                                  <svg class="sbp">
+                                    <use href="/image/icon/sbp.svg#sbp"></use>
+                                  </svg>
+                                </div></a></li>
+                            <li class="select-tabs__item"><a class="select-tabs__link" href="#" data-action="select-tab" data-value="tinkoff" title="Оплатить с помощью Tinkoff Pay">
+                                <div class="select-tabs__icon">
+                                  <svg class="tinkoff">
+                                    <use href="/image/icon/tinkoff-pay.svg#tinkoff-pay"></use>
+                                  </svg>
+                                </div></a></li>
+                            <li class="select-tabs__item"><a class="select-tabs__link" href="#" data-action="select-tab" data-value="yandex" title="Оплатить с помощью Yandex Pay">
+                                <div class="select-tabs__icon">
+                                  <svg class="yandex">
+                                    <use href="/image/icon/yandex-pay.svg#yandex-pay"></use>
+                                  </svg>
+                                </div></a></li>
+                          </ul>
+                        </div>
+                      </div>
+                    </fieldset>
+                    <div class="form__text">
+                      <input class="checkbox" type="checkbox" id="agreement">
+                      <label class="checkbox-label" for="agreement">
+                        <svg>
+                          <use href="/image/icon/check.svg#check"></use>
+                        </svg>
+                      </label>
+                      <p>Нажимая на кнопку «Пополнить», вы соглашаетесь, с <a href="/privacy.html" title="Политика конфиденциальности">политикой конфиденциальности</a> и правилами возврата.</p>
+                    </div>
+                    <div class="form__button">
+                      <div class="button"><a href="#" data-action="send-form" title="Пополнить">Пополнить</a></div>
+                    </div>
+                  </form>
+                  <ul class="index-calculation">
+                    <li class="index-calculation__item">
+                      <div class="index-calculation__title">Заплатите</div>
+                      <div class="index-calculation__value"><span class="indent">254.77</span>&#8381;</div>
+                    </li>
+                    <li class="index-calculation__item">
+                      <div class="index-calculation__title">Получите на баланс Steam</div>
+                      <div class="index-calculation__value"><span class="promo">(-30%)</span><span class="sum"><span class="indent yellow">200.29</span><span class="normal">&#8381;</span></span></div>
+                    </li>
+                    <li class="index-calculation__item">
+                      <div class="index-calculation__title">Комиссия сервиса
+                        <div class="index-calculation__tooltip index-calculation__tooltip--small" area-expanded="false">
+                          <svg>
+                            <use href="/image/icon/question.svg#question"></use>
+                          </svg><span>6% — фиксированная комиссия</span>
+                        </div>
+                      </div>
+                      <div class="index-calculation__value"><span class="indent">12</span>&#8381;<span class="service"><span>(-99.79</span><span class="normal">&#8381;</span><span>)</span></span></div>
+                    </li>
+                    <li class="index-calculation__item">
+                      <div class="index-calculation__title">Банковские издержки
+                        <div class="index-calculation__tooltip" area-expanded="false">
+                          <svg>
+                            <use href="/image/icon/question.svg#question"></use>
+                          </svg><span>Переменные издержки, связанные с разницей курсов валют в Steam, а&nbsp;также с комиссией платежных систем, могут меняться каждый час.</span>
+                        </div>
+                      </div>
+                      <div class="index-calculation__value"><span class="indent">~ 42.48</span>&#8381;</div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="index__video object">
+                <video autoplay loop muted playsinline>
+                  <source src="/video/main.mp4" type="video/mp4">
+                </video>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section id="steps">
+          <div class="container">
+            <div class="steps content object-wrapper">
+              <div class="steps__title object">
+                <h2>Как это работает?</h2>
+              </div>
+              <ul class="steps-list object">
+                <li class="steps-list__item">
+                  <div class="steps-list__count">01.</div>
+                  <div class="steps-list__text">
+                    <p>Введи свой логин Steam</p>
+                  </div>
+                </li>
+                <li class="steps-list__item">
+                  <div class="steps-list__count">02.</div>
+                  <div class="steps-list__text">
+                    <p>Укажите сумму пополнения</p>
+                  </div>
+                </li>
+                <li class="steps-list__item">
+                  <div class="steps-list__count">03.</div>
+                  <div class="steps-list__text">
+                    <p>Оплатите удобным способом</p>
+                  </div>
+                </li>
+                <li class="steps-list__item">
+                  <div class="steps-list__count">04.</div>
+                  <div class="steps-list__text">
+                    <p>Получите деньги на&nbsp;баланс Steam</p>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
+        <section id="faq">
+          <div class="container">
+            <div class="faq content object-wrapper">
+              <div class="faq__title object">
+                <h2>Часто задаваемые вопросы</h2>
+              </div>
+              <ul class="faq-list object">
+                <li class="faq-list__item">
+                  <div class="faq-list__question" area-expanded="true">
+                    <div class="faq-list__icon">
+                      <svg>
+                        <use href="/image/icon/arrow-circle.svg#arrow"></use>
+                      </svg>
+                    </div>
+                    <div class="faq-list__title">
+                      <h4>Требования к аккаунту</h4>
+                    </div>
+                  </div>
+                  <div class="faq-list__answer">
+                    <div class="faq-list__text">
+                      <p>Есть перечень требований к аккаунту, соответствие которых позволит нам совершить пополнение баланса:</p>
+                      <p>ВАЖНО! Перед оплатой отключите VPN и переподключитесь к STEAM</p>
+                      <ul>
+                        <li>
+                          <p>Регион аккаунта: Россия</p>
+                        </li>
+                        <li>
+                          <p>Валюта аккаунта: Рубли</p>
+                        </li>
+                        <li>
+                          <p>Мы НЕ можем пополнить аккаунты пользователей из регионов: Крым, ЛНР, ДНР</p>
+                        </li>
+                        <li>
+                          <p>На аккаунте не должно быть красной таблички (КТ). КТ - это запрет на обмен, запрет на активацию ключей в Steam, перманентный бан ТП Steam</p>
+                        </li>
+                        <li>
+                          <p>Логин не может состоять Только из цифр</p>
+                        </li>
+                      </ul>
+                      <p>Если нарушено хотя бы одно требование ваши средства могут зависнуть в агрегаторе!<br>Будьте Внимательны!</p>
+                    </div>
+                  </div>
+                </li>
+                <li class="faq-list__item">
+                  <div class="faq-list__question" area-expanded="false">
+                    <div class="faq-list__icon">
+                      <svg>
+                        <use href="/image/icon/arrow-circle.svg#arrow"></use>
+                      </svg>
+                    </div>
+                    <div class="faq-list__title">
+                      <h4>У меня новый (свежесозданный) или ранее не пополнявшийся аккаунт</h4>
+                    </div>
+                  </div>
+                  <div class="faq-list__answer">
+                    <div class="faq-list__text">
+                      <p>Текст</p>
+                    </div>
+                  </div>
+                </li>
+                <li class="faq-list__item">
+                  <div class="faq-list__question" area-expanded="false">
+                    <div class="faq-list__icon">
+                      <svg>
+                        <use href="/image/icon/arrow-circle.svg#arrow"></use>
+                      </svg>
+                    </div>
+                    <div class="faq-list__title">
+                      <h4>Пришла сумма меньше чем в калькуляторе. Что делать?</h4>
+                    </div>
+                  </div>
+                  <div class="faq-list__answer">
+                    <div class="faq-list__text">
+                      <p>Текст</p>
+                    </div>
+                  </div>
+                </li>
+                <li class="faq-list__item">
+                  <div class="faq-list__question" area-expanded="false">
+                    <div class="faq-list__icon">
+                      <svg>
+                        <use href="/image/icon/arrow-circle.svg#arrow"></use>
+                      </svg>
+                    </div>
+                    <div class="faq-list__title">
+                      <h4>Политика возврата</h4>
+                    </div>
+                  </div>
+                  <div class="faq-list__answer">
+                    <div class="faq-list__text">
+                      <p>Текст</p>
+                    </div>
+                  </div>
+                </li>
+                <li class="faq-list__item">
+                  <div class="faq-list__question" area-expanded="false">
+                    <div class="faq-list__icon">
+                      <svg>
+                        <use href="/image/icon/arrow-circle.svg#arrow"></use>
+                      </svg>
+                    </div>
+                    <div class="faq-list__title">
+                      <h4>Не приходят деньги на баланс аккаунта Steam</h4>
+                    </div>
+                  </div>
+                  <div class="faq-list__answer">
+                    <div class="faq-list__text">
+                      <p>Текст</p>
+                    </div>
+                  </div>
+                </li>
+                <li class="faq-list__item">
+                  <div class="faq-list__question" area-expanded="false">
+                    <div class="faq-list__icon">
+                      <svg>
+                        <use href="/image/icon/arrow-circle.svg#arrow"></use>
+                      </svg>
+                    </div>
+                    <div class="faq-list__title">
+                      <h4>Я указал неверный логин</h4>
+                    </div>
+                  </div>
+                  <div class="faq-list__answer">
+                    <div class="faq-list__text">
+                      <p>Текст</p>
+                    </div>
+                  </div>
+                </li>
+                <li class="faq-list__item">
+                  <div class="faq-list__question" area-expanded="false">
+                    <div class="faq-list__icon">
+                      <svg>
+                        <use href="/image/icon/arrow-circle.svg#arrow"></use>
+                      </svg>
+                    </div>
+                    <div class="faq-list__title">
+                      <h4>Что такое «Логин»?</h4>
+                    </div>
+                  </div>
+                  <div class="faq-list__answer">
+                    <div class="faq-list__text">
+                      <p>Текст</p>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
+      </main>
+<footer>
+  <div class="container">
+    <div class="footer content">
+      <div class="footer__group">
+        <nav class="footer-menu">
+          <ul>
+            <li><a href="/#faq" title="FAQ">FAQ</a></li>
+            <li><a href="//vk.com/steamgold" target="_blank" title="Отзывы">
+                <svg class="vk">
+                  <use href="/image/icon/vk.svg#vk"></use>
+                </svg>Отзывы</a></li>
+            <li><a href="tg://resolve?domain=Steamgold" target="_blank" title="Есть вопросы?">
+                <svg class="telegram">
+                  <use href="/image/icon/telegram.svg#telegram"></use>
+                </svg>Есть вопросы?</a></li>
+            <li><a href="/about.html" title="О компании">О компании</a></li>
+            <li><a href="/privacy.html" title="Политика">Политика</a></li>
+          </ul>
+        </nav>
+        <div class="footer-bank">
+          <div class="footer-bank__image"><img src="/image/tinkoff.svg" title="Обслуживающий банк"></div>
+          <div class="footer-bank__desc">Обслуживающий банк</div>
+        </div>
+      </div>
+      <div class="footer-copyright"><img src="/image/logo-footer.svg" alt="Steamgold">
+        <p>&copy; 2023 Steamgold<br>Все права защищены.</p>
+      </div>
+    </div>
+  </div>
+</footer>
+    </div>
+<!-- Popup-->
+<div class="popup">
+  <div class="popup-overlay" data-action="close-popup"></div>
+  <!-- Где взять логин-->
+  <div class="login popup__module popup__module--right"><a class="popup__close" href="#" data-action="close-popup" title="Закрыть окно">
+      <svg>
+        <use href="/image/icon/close.svg#close"></use>
+      </svg></a>
+    <div class="login__main">
+      <div class="login__title">
+        <h3>Где взять логин Steam?</h3>
+      </div>
+      <div class="login__text">
+        <p>Обратите внимание! Логин, это то, что вы указываете при входе в&nbsp;Steam. Если вы укажите неверный логин, то средства уйдут другому пользователю.</p>
+      </div>
+      <div class="login__button">
+        <div class="button button--link"><a href="#" target="_blank" title="Перейти к аккаунту">Перейти к аккаунту</a></div>
+      </div>
+      <div class="login__image"><img src="/image/illustration/login.png" srcset="/image/illustration/login@2x.png 2x, /image/illustration/login@3x.png 3x" loading="lazy" alt="illustration"></div>
+    </div>
+  </div>
+  <!-- Зачем нужен email-->
+  <div class="email popup__module popup__module--right"><a class="popup__close" href="#" data-action="close-popup" title="Закрыть окно">
+      <svg>
+        <use href="/image/icon/close.svg#close"></use>
+      </svg></a>
+    <div class="email__main">
+      <div class="email__title">
+        <h3>Зачем вам мой email?</h3>
+      </div>
+      <div class="email__text">
+        <p>Адрес электронной почты требуется для отправки банком-эквайером чека о совершении операции в соответствие с законом № 54-ФЗ.</p>
+      </div>
+    </div>
+  </div>
+  <!-- Заявка принята-->
+  <div class="accepted popup__module popup__module--center"><a class="popup__close" href="#" data-action="close-popup" title="Закрыть окно">
+      <svg>
+        <use href="/image/icon/close.svg#close"></use>
+      </svg></a>
+    <div class="accepted__main">
+      <div class="accepted__image"><img src="/image/logo-steam.svg" alt="image"></div>
+      <div class="accepted__title">
+        <h3>Заявка на пополнение счета принята</h3>
+      </div>
+      <div class="accepted__text">
+        <p>В ближайшее время баланс Steam будет пополнен.</p>
+      </div>
+      <div class="accepted-social">
+        <div class="accepted-social__text">
+          <p>Присоединяйтесь к нашему телеграм-сообществу для получения обновлений и скидок при пополнении.</p>
+        </div>
+        <div class="accepted-social__link"><a href="tg://resolve?domain=Steamgold" target="_blank" title="Телеграм">
+            <svg>
+              <use href="/image/icon/telegram.svg#telegram"></use>
+            </svg>Перейти</a></div>
+        <div class="accepted-social__image">
+          <svg>
+            <use href="/image/bg/telegram.svg#telegram"></use>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Popup end-->
+    <!-- js-->
+  <script defer src="/assets/js/main.js?v=c07bd0a"></script></body>
+</html>

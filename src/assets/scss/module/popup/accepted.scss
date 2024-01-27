@@ -1,0 +1,36 @@
+
+.accepted {
+  &__main { opacity: 0; transform: translateY(16px); transition: opacity 1.2s ease-in-out, transform 1.2s ease-in-out; }
+  &__image { margin-bottom: 2.625rem;
+    img { width: 191px; height: 65px; }
+  }
+  &__title { margin-bottom: 1.125rem; }
+  &__button { margin-top: 1.875rem; }
+
+  &-social { position: relative; border: 1px solid rgba($White, .16); border-radius: 4px; margin-top: 2.125rem; padding: 1.5rem 1rem; background: $Blue; overflow: hidden;
+    &__text { margin-bottom: .5rem;
+      p { font-size: 13px; line-height: 21px; color: rgba($White, .8); }
+    }
+    &__link a { color: $White; font-weight: 600; font-size: 15px; line-height: 19px; letter-spacing: 1px; text-transform: uppercase; display: flex; align-items: center;
+      svg { width: 16px; height: 14px; margin-right: .5rem; fill: $White; flex: none; }
+    }
+    &__image { position: absolute; right: -5px; bottom: -38px;
+      svg { width: 173px; height: 151px; }
+    }
+  }
+}
+
+@media screen and (min-width: $tabletWidth) {
+  .accepted {
+    &__image { margin-bottom: 2.375rem; }
+    &__title { margin-bottom: .875rem; }
+    &__button { margin-top: 2.5rem; }
+
+    &-social { margin-top: 3.5rem; padding: 1.5rem 2rem;
+      &__text { margin-bottom: 1.5rem;
+        p { font-size: 15px; line-height: 22px; }
+      }
+      &__image svg { width: 185px; height: 162px; }
+    }
+  }
+}

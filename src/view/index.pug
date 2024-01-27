@@ -1,0 +1,374 @@
+extends include/main
+
+block variables
+  - let title = 'Steamgold'
+  - let description = ''
+  - let page = 'index'
+
+block content
+  section#index
+    .container
+      .index.content.object-wrapper
+        .index__main
+          .index__title
+            h1 Пополнить баланс Steam
+          .index__group
+            form.form.index__form(name='balance' action='/' autocomplete='off' accept-charset='utf-8')
+              fieldset.form__line
+                .form__group
+                  .form__icon
+                    img(src='/image/icon/user.svg' alt='icon')
+                  input.form__input(type='text' name='login' required placeholder='Ваш логин' value='' title='Введите ваш логин')
+                  a.form__link(href='#' data-action='open-popup' data-popup='login' title='Где взять логин?')
+                    svg
+                      use(href='/image/icon/info.svg#info')
+                    span Где взять логин?
+                  .form__error Введите логин для пополнения
+              fieldset.form__line
+                .form__group
+                  .form__icon
+                    img(src='/image/icon/wallet.svg' alt='icon')
+                  input.form__input(type='number' name='amount' required placeholder='500' value='' title='Введите сумму')
+                  span.symbol &#8381;
+                  .form__error Введите сумму
+                  .form__error-2 Минимальная сумма пополнения - 200₽
+              fieldset.form__line
+                .form__group
+                  .form__icon
+                    img(src='/image/icon/email.svg' alt='icon')
+                  input.form__input(type='email' name='email' required placeholder='Ваш email' value='' title='Введите ваш email')
+                  a.form__link.form__link--email(href='#' data-action='open-popup' data-popup='email' title='Зачем нужен email?')
+                    svg
+                      use(href='/image/icon/info.svg#info')
+                  .form__tooltip(area-expanded='false')
+                    svg
+                      use(href='/image/icon/question-2.svg#question')
+                    span Адрес электронной почты требуется для отправки банком-эквайером чека о совершении операции в соответствие с законом № 54-ФЗ.
+                  .form__error Укажите ваш email
+              fieldset.form__line
+                .form__group
+                  .form__icon
+                    img(src='/image/icon/promo.svg' alt='icon')
+                  input.form__input(type='text' name='promo' placeholder='Есть промокод?' value='' title='Введите промокод')
+                  .form__action.form__action--check
+                    a(href='#' data-action='check-promo' title='Подтверлить')
+                      svg
+                        use(href='/image/icon/check-input.svg#check')
+                  .form__action.form__action--close
+                    a(href='#' data-action='close-promo' title='Сбросить')
+                      svg
+                        use(href='/image/icon/close-input.svg#close')
+                  .form__error-2 Введен недействительный промокод
+              fieldset.form__line
+                .form__group
+                  label.form__label Способ оплаты
+                  .select.form__select
+                    input(type='hidden' name='payment' required value='visa')
+                    a.select-link(href='#' data-action='toggle-options' title='Выберите способ оплаты')
+                      input.form__input(type='text' readonly placeholder='' value='')
+                      .select-image
+                        svg.visa
+                          use(href='/image/icon/visa.m.svg#visa')
+                      .select-arrow
+                        svg
+                          use(href='/image/icon/arrow.svg#arrow')
+                    ul.select-options
+                      li.select-options__item
+                        a.select-options__link.active(href='#' data-action='select-option' data-value='visa-mir' title='Оплатить с помощью карт Visa или Мир')
+                          .select-options__icon
+                            svg.visa-mir
+                              use(href='/image/icon/visa-mir.m.svg#visa-mir')
+                          .select-options__check
+                            svg
+                              use(href='/image/icon/check.svg#check')
+                      //- li.select-options__item
+                        a.select-options__link(href='#' data-action='select-option' data-value='mir' title='Оплатить с помощью карты Мир')
+                          .select-options__icon
+                            svg.mir
+                              use(href='/image/icon/mir.svg#mir')
+                          .select-options__check
+                            svg
+                              use(href='/image/icon/check.svg#check')
+                      li.select-options__item
+                        a.select-options__link(href='#' data-action='select-option' data-value='sbp' title='Оплатить с помощью СБП')
+                          .select-options__icon
+                            svg.sbp
+                              use(href='/image/icon/sbp.svg#sbp')
+                          .select-options__check
+                            svg
+                              use(href='/image/icon/check.svg#check')
+                      li.select-options__item
+                        a.select-options__link(href='#' data-action='select-option' data-value='tinkoff-pay' title='Оплатить с помощью Tinkoff Pay')
+                          .select-options__icon
+                            svg.tinkoff
+                              use(href='/image/icon/tinkoff-pay.svg#tinkoff-pay')
+                          .select-options__check
+                            svg
+                              use(href='/image/icon/check.svg#check')
+                      li.select-options__item
+                        a.select-options__link(href='#' data-action='select-option' data-value='yandex-pay' title='Оплатить с помощью Yandex Pay')
+                          .select-options__icon
+                            svg.yandex
+                              use(href='/image/icon/yandex-pay.svg#yandex-pay')
+                          .select-options__check
+                            svg
+                              use(href='/image/icon/check.svg#check')
+                      //- li.select-options__item
+                        a.select-options__link(href='#' data-action='select-option' data-value='jcb' title='Оплатить с помощью JCB')
+                          .select-options__icon
+                            svg.jcb
+                              use(href='/image/icon/jcb.svg#jcb')
+                          .select-options__check
+                            svg
+                              use(href='/image/icon/check.svg#check')
+                      //- li.select-options__item
+                        a.select-options__link(href='#' data-action='select-option' data-value='apple-pay' title='Оплатить с помощью Apple Pay')
+                          .select-options__icon
+                            svg.apple
+                              use(href='/image/icon/apple-pay.svg#apple-pay')
+                          .select-options__check
+                            svg
+                              use(href='/image/icon/check.svg#check')
+                      //- li.select-options__item
+                        a.select-options__link(href='#' data-action='select-option' data-value='google-pay' title='Оплатить с помощью GPay')
+                          .select-options__icon
+                            svg.google
+                              use(href='/image/icon/google-pay.svg#google-pay')
+                          .select-options__check
+                            svg
+                              use(href='/image/icon/check.svg#check')
+                      //- li.select-options__item
+                        a.select-options__link(href='#' data-action='select-option' data-value='samsung-pay' title='Оплатить с помощью Samsung Pay')
+                          .select-options__icon
+                            svg.samsung
+                              use(href='/image/icon/samsung-pay.svg#samsung-pay')
+                          .select-options__check
+                            svg
+                              use(href='/image/icon/check.svg#check')
+                      //- li.select-options__item
+                        a.select-options__link(href='#' data-action='select-option' data-value='unionpay' title='Оплатить с помощью UnionPay')
+                          .select-options__icon
+                            svg.union
+                              use(href='/image/icon/unionpay.svg#unionpay')
+                          .select-options__check
+                            svg
+                              use(href='/image/icon/check.svg#check')
+                    ul.select-tabs
+                      li.select-tabs__item.select-tabs__item--active
+                        a.select-tabs__link(href='#' data-action='select-tab' data-value='visa-mir' title='Оплатить с помощью карт Visa или Мир')
+                          .select-tabs__icon
+                            svg.visa-mir
+                              use(href='/image/icon/visa-mir.svg#visa-mir')
+                      //- li.select-tabs__item
+                        a.select-tabs__link(href='#' data-action='select-tab' data-value='mir' title='Оплатить с помощью карты Мир')
+                          .select-tabs__icon
+                            svg.mir
+                              use(href='/image/icon/mir.svg#mir')
+                      li.select-tabs__item
+                        a.select-tabs__link(href='#' data-action='select-tab' data-value='sbp' title='Оплатить с помощью СБП')
+                          .select-tabs__icon
+                            svg.sbp
+                              use(href='/image/icon/sbp.svg#sbp')
+                      li.select-tabs__item
+                        a.select-tabs__link(href='#' data-action='select-tab' data-value='tinkoff' title='Оплатить с помощью Tinkoff Pay')
+                          .select-tabs__icon
+                            svg.tinkoff
+                              use(href='/image/icon/tinkoff-pay.svg#tinkoff-pay')
+                      li.select-tabs__item
+                        a.select-tabs__link(href='#' data-action='select-tab' data-value='yandex' title='Оплатить с помощью Yandex Pay')
+                          .select-tabs__icon
+                            svg.yandex
+                              use(href='/image/icon/yandex-pay.svg#yandex-pay')
+                      //- li.select-tabs__item
+                        a.select-tabs__link(href='#' data-action='select-tab' data-value='jcb' title='Оплатить с помощью JCB')
+                          .select-tabs__icon
+                            svg.jcb
+                              use(href='/image/icon/jcb.svg#jcb')
+                      //- li.select-tabs__item
+                        a.select-tabs__link(href='#' data-action='select-tab' data-value='apple-pay' title='Оплатить с помощью Apple Pay')
+                          .select-tabs__icon
+                            svg.apple
+                              use(href='/image/icon/apple-pay.svg#apple-pay')
+                      //- li.select-tabs__item
+                        a.select-tabs__link(href='#' data-action='select-tab' data-value='google-pay' title='Оплатить с помощью GPay')
+                          .select-tabs__icon
+                            svg.google
+                              use(href='/image/icon/google-pay.svg#google-pay')
+                      //- li.select-tabs__item
+                        a.select-tabs__link(href='#' data-action='select-tab' data-value='samsung-pay' title='Оплатить с помощью Samsung Pay')
+                          .select-tabs__icon
+                            svg.samsung
+                              use(href='/image/icon/samsung-pay.svg#samsung-pay')
+                      //- li.select-tabs__item
+                        a.select-tabs__link(href='#' data-action='select-tab' data-value='unionpay' title='Оплатить с помощью UnionPay')
+                          .select-tabs__icon
+                            svg.union
+                              use(href='/image/icon/unionpay.svg#unionpay')
+              .form__text
+                input(type="checkbox").checkbox#agreement
+                label(for="agreement").checkbox-label
+                  svg
+                    use(href='/image/icon/check.svg#check')
+                p
+                  | Нажимая на кнопку «Пополнить», вы соглашаетесь, с 
+                  a(href='/privacy.html' title='Политика конфиденциальности') политикой конфиденциальности
+                  |  и правилами возврата.
+              .form__button
+                .button
+                  a(href='#' data-action='send-form' title='Пополнить') Пополнить
+            ul.index-calculation
+              li.index-calculation__item
+                .index-calculation__title
+                  | Заплатите
+                .index-calculation__value
+                  span.indent 254.77
+                  | &#8381;
+              li.index-calculation__item
+                .index-calculation__title
+                  | Получите на баланс Steam
+                .index-calculation__value
+                  span.promo (-30%)
+                  span.sum
+                    span.indent.yellow 200.29
+                    span.normal &#8381;
+              li.index-calculation__item
+                .index-calculation__title
+                  | Комиссия сервиса
+                  .index-calculation__tooltip.index-calculation__tooltip--small(area-expanded='false')
+                    svg
+                      use(href='/image/icon/question.svg#question')
+                    span 6% — фиксированная комиссия
+                .index-calculation__value
+                  span.indent 12
+                  | &#8381;
+                  span.service
+                    span (-99.79
+                    span.normal &#8381;
+                    span )
+              li.index-calculation__item
+                .index-calculation__title
+                  | Банковские издержки
+                  .index-calculation__tooltip(area-expanded='false')
+                    svg
+                      use(href='/image/icon/question.svg#question')
+                    span Переменные издержки, связанные с разницей курсов валют в Steam, а&nbsp;также с комиссией платежных систем, могут меняться каждый час.
+                .index-calculation__value
+                  span.indent ~ 42.48
+                  | &#8381;
+        .index__video.object
+          video(autoplay loop muted playsinline)
+            source(src='/video/main.mp4' type='video/mp4')
+  section#steps
+    .container
+      .steps.content.object-wrapper
+        .steps__title.object
+          h2 Как это работает?
+        ul.steps-list.object
+          li.steps-list__item
+            .steps-list__count 01.
+            .steps-list__text
+              p Введи свой логин Steam
+          li.steps-list__item
+            .steps-list__count 02.
+            .steps-list__text
+              p Укажите сумму пополнения
+          li.steps-list__item
+            .steps-list__count 03.
+            .steps-list__text
+              p Оплатите удобным способом
+          li.steps-list__item
+            .steps-list__count 04.
+            .steps-list__text
+              p Получите деньги на&nbsp;баланс Steam
+  section#faq
+    .container
+      .faq.content.object-wrapper
+        .faq__title.object
+          h2 Часто задаваемые вопросы
+        ul.faq-list.object
+          li.faq-list__item
+            .faq-list__question(area-expanded='true')
+              .faq-list__icon
+                svg
+                  use(href='/image/icon/arrow-circle.svg#arrow')
+              .faq-list__title
+                h4 Требования к аккаунту
+            .faq-list__answer
+              .faq-list__text
+                p Есть перечень требований к аккаунту, соответствие которых позволит нам совершить пополнение баланса:
+                p ВАЖНО! Перед оплатой отключите VPN и переподключитесь к STEAM
+                ul
+                  li
+                    p Регион аккаунта: Россия
+                  li
+                    p Валюта аккаунта: Рубли
+                  li
+                    p Мы НЕ можем пополнить аккаунты пользователей из регионов: Крым, ЛНР, ДНР
+                  li
+                    p На аккаунте не должно быть красной таблички (КТ). КТ - это запрет на обмен, запрет на активацию ключей в Steam, перманентный бан ТП Steam
+                  li
+                    p Логин не может состоять Только из цифр
+                p
+                  | Если нарушено хотя бы одно требование ваши средства могут зависнуть в агрегаторе!
+                  br
+                  | Будьте Внимательны!
+          li.faq-list__item
+            .faq-list__question(area-expanded='false')
+              .faq-list__icon
+                svg
+                  use(href='/image/icon/arrow-circle.svg#arrow')
+              .faq-list__title
+                h4 У меня новый (свежесозданный) или ранее не пополнявшийся аккаунт
+            .faq-list__answer
+              .faq-list__text
+                p Текст
+          li.faq-list__item
+            .faq-list__question(area-expanded='false')
+              .faq-list__icon
+                svg
+                  use(href='/image/icon/arrow-circle.svg#arrow')
+              .faq-list__title
+                h4 Пришла сумма меньше чем в калькуляторе. Что делать?
+            .faq-list__answer
+              .faq-list__text
+                p Текст
+          li.faq-list__item
+            .faq-list__question(area-expanded='false')
+              .faq-list__icon
+                svg
+                  use(href='/image/icon/arrow-circle.svg#arrow')
+              .faq-list__title
+                h4 Политика возврата
+            .faq-list__answer
+              .faq-list__text
+                p Текст
+          li.faq-list__item
+            .faq-list__question(area-expanded='false')
+              .faq-list__icon
+                svg
+                  use(href='/image/icon/arrow-circle.svg#arrow')
+              .faq-list__title
+                h4 Не приходят деньги на баланс аккаунта Steam
+            .faq-list__answer
+              .faq-list__text
+                p Текст
+          li.faq-list__item
+            .faq-list__question(area-expanded='false')
+              .faq-list__icon
+                svg
+                  use(href='/image/icon/arrow-circle.svg#arrow')
+              .faq-list__title
+                h4 Я указал неверный логин
+            .faq-list__answer
+              .faq-list__text
+                p Текст
+          li.faq-list__item
+            .faq-list__question(area-expanded='false')
+              .faq-list__icon
+                svg
+                  use(href='/image/icon/arrow-circle.svg#arrow')
+              .faq-list__title
+                h4 Что такое «Логин»?
+            .faq-list__answer
+              .faq-list__text
+                p Текст

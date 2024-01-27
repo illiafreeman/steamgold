@@ -1,0 +1,49 @@
+
+/* Brand colors */
+$Yellow                    : #eb9900;
+$LightYellow               : #ffc64b;
+$Blue                      : #0384c5;
+
+$Black                     : #181a21;
+$DarkGrey                  : #22252d;
+$MiddleGrey                : #50535a;
+$LightGrey                 : #b0b5c1;
+$White                     : #ffffff;
+
+/* Font options */
+$mainFontWeight            : normal;
+$mainFontSize              : 16px;
+$mainFontFamily            : 'Inter', sans-serif;
+$mainLineHeight            : 1.5;
+
+/* Screen resolution */
+$mobileWidth               : 320px;
+$tabletWidth               : 768px;
+$laptopWidth               : 992px;
+$desktopWidth              : 1248px;
+$desktopWidth_md           : 1440px;
+$desktopWidth_lg           : 1920px;
+
+/* Primary colors */
+$mainColor                 : $LightGrey;
+$mainBackground            : $Black;
+$linkColor                 : $Yellow;
+$linkColor_hover           : $LightYellow;
+
+$successColor              : $Yellow;
+$errorColor                : #ff3a30;
+
+/* Color shadows */
+$scrollbarBoxShadow        : inset 0 0 1px rgba(255, 255, 255, .66);
+
+/* Other */
+$blockBackground           : rgba(#13161a, .8);
+$blockBackground1          : #13161a;
+$blockBackground2          : rgba(#13161a, .95);
+$borderColor               : rgba(34, 37, 45, .9);
+$optionsBackground         : #282d36;
+$optionsBorderColor        : rgba(176, 181, 193, .2);
+$borderColor_symbol        : #13161a;
+$tooltipBackground         : #0e1013;
+
+$overlayBackground         : rgba(34, 37, 45, .6);

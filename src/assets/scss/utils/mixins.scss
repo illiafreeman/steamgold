@@ -1,0 +1,40 @@
+
+/* Pseudo */
+@mixin pseudo($content: '', $position: absolute, $display: block) {
+  content: $content;
+  position: $position;
+  display: $display;
+}
+
+/* Subgrid */
+@mixin subgrid($start, $columns) {
+  grid-column-start: $start;
+  grid-column-end: span $columns;
+  display: grid;
+  grid-template-columns: repeat($columns, 1fr);
+  grid-gap: inherit;
+}
+
+/* Z-index */
+$layer: (
+  close: 9999,
+  popup-module: 9100,
+  popup: 9000,
+  menu: 5000,
+  header: 3000,
+  select-options: 2500,
+  tooltip: 2400,
+  calculation: 2300,
+  index: 2200,
+  steps: 2100,
+  main: 2000,
+  footer: 1000
+);
+
+@mixin z($index) {
+  @if map-has-key($layer, $index) {
+    z-index: map-get($layer, $index);
+  } @else {
+    @warn "The key #{ $index } is not in the map `$layer`";
+  }
+}

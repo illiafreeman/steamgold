@@ -1,0 +1,29 @@
+extends include/main
+
+block variables
+  - let title = 'Steamgold'
+  - let description = ''
+  - let page = 'error'
+
+block content
+  section#error
+    .container
+      .error.content.object-wrapper
+        .error__image
+          .error__image--left
+            img(src='/image/illustration/error.png' srcset='/image/illustration/error@2x.png 2x, /image/illustration/error@3x.png 3x' loading='eager' alt='illustration')
+          .error__image--right
+            img(src='/image/illustration/error.png' srcset='/image/illustration/error@2x.png 2x, /image/illustration/error@3x.png 3x' loading='eager' alt='illustration')
+        .error__main.object
+          .error__title
+            h1
+              | Ошибка 404
+              span
+                | ,
+                br
+                | страница не найдена
+          .error__text
+            p
+              | Проверьте правильность введенной ссылки, вернуться на 
+              a(href='/' title='Steamgold') главную страницу
+              | .

@@ -1,0 +1,55 @@
+// Popup
+.popup
+  .popup-overlay(data-action='close-popup')
+  // Где взять логин
+  .login.popup__module.popup__module--right
+    a.popup__close(href='#' data-action='close-popup' title='Закрыть окно')
+      svg
+        use(href='/image/icon/close.svg#close')
+    .login__main
+      .login__title
+        h3 Где взять логин Steam?
+      .login__text
+        p Обратите внимание! Логин, это то, что вы указываете при входе в&nbsp;Steam. Если вы укажите неверный логин, то средства уйдут другому пользователю.
+      .login__button
+        .button.button--link
+          a(href='#' target='_blank' title='Перейти к аккаунту') Перейти к аккаунту
+      .login__image
+        img(src='/image/illustration/login.png' srcset='/image/illustration/login@2x.png 2x, /image/illustration/login@3x.png 3x' loading='lazy' alt='illustration')
+  // Зачем нужен email
+  .email.popup__module.popup__module--right
+    a.popup__close(href='#' data-action='close-popup' title='Закрыть окно')
+      svg
+        use(href='/image/icon/close.svg#close')
+    .email__main
+      .email__title
+        h3 Зачем вам мой email?
+      .email__text
+        p Адрес электронной почты требуется для отправки банком-эквайером чека о совершении операции в соответствие с законом № 54-ФЗ.
+  // Заявка принята
+  .accepted.popup__module.popup__module--center
+    a.popup__close(href='#' data-action='close-popup' title='Закрыть окно')
+      svg
+        use(href='/image/icon/close.svg#close')
+    .accepted__main
+      .accepted__image
+        img(src='/image/logo-steam.svg' alt='image')
+      .accepted__title
+        h3 Заявка на пополнение счета принята
+      .accepted__text
+        p В ближайшее время баланс Steam будет пополнен.
+      //- .accepted__button
+      //-   .button.button--link
+      //-     a(href='#' data-action='focus-form' title='Пополнить еще') Пополнить еще
+      .accepted-social
+        .accepted-social__text
+          p Присоединяйтесь к нашему телеграм-сообществу для получения обновлений и скидок при пополнении.
+        .accepted-social__link
+          a(href='tg://resolve?domain=Steamgold' target='_blank' title='Телеграм')
+            svg
+              use(href='/image/icon/telegram.svg#telegram')
+            | Перейти
+        .accepted-social__image
+          svg
+            use(href='/image/bg/telegram.svg#telegram')
+// Popup end

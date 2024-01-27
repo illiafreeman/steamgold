@@ -1,0 +1,11 @@
+
+.email {
+  &__main { opacity: 0; transform: translateY(16px); transition: opacity 1.2s ease-in-out, transform 1.2s ease-in-out; }
+  &__title { margin-bottom: 1.3125rem; }
+}
+
+@media screen and (min-width: $tabletWidth) {
+  .email {
+    &__title { margin-bottom: 1.5625rem; }
+  }
+}
